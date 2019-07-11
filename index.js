@@ -50,7 +50,7 @@ function increaseHeight() {
 }
 obj.increaseHeight();
 
-// Task 4 ? не считает double, остальное отрабатывает
+// Task 4 
 
 
 const numerator = {
