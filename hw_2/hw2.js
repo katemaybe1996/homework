@@ -1,5 +1,5 @@
 // Arrow functions
-function sum(...theArgs) {
+let sum = (...theArgs) => {
     if (!theArgs.length) return 0;
     return theArgs.reduce((previous, current) => {
         return previous + current;
@@ -36,52 +36,42 @@ getInfo(organisation);
 
 //High order functions
 
-//task 1
-function changeArray(arr, handler) {
+//task 1 
+
+function firstFunc(arr, handler) {
     if (!Array.isArray(arr)) return console.error('First argument should be array');
-    if (typeof callback !== 'function') return console.error('Second argument should be function');
-    const res = [];
+    if (typeof handler !== 'function') return console.error('Second argument should be function');
+    let res = "";
     for (let i = 0; i < arr.length; i++) {
-        res.push(arr[i]);
+        return res + arr[i];
     }
-    return 'New value' + res;
+
 }
 
-// function handler1(el) {
-//     res.join('');
-// }
+const res1 = firstFunc(['my', 'name', 'is', 'Trinity'], (res) => { res.join(' ') });
+const res2 = firstFunc([10, 20], (res) => { res *= 10 })
+const res3 = firstFunc([{ age: 45, name: 'John' }, { age: 20, name: 'Aaron' }], (res) => { arr.name + 'is' + arr.age })
+const res4 = firstFunc((['a, b ,c', '1, 2, 3'], (res) => { res.reverse(' ') }))
 
-// changeArray(['my', 'name', 'is', 'Trinity'], handler1());
-
-// function handler2(el) {
-//     arr[i] * 10
-// }
-
-// function handler3(el) {
-
-// }
-// function handler4(el) {
-//     res.reverse()
-// }
-// changeArray(['abc','123'], handler4())
+console.log(res1, res2, res3, res4);
 
 
 //task 2
 
-function everyFunc(arr, callback) {
-    if (!Array.isArray(arr)) return console.error('First argument should be array');
-    if (typeof callback !== 'function') return console.error('Second argument should be function');
-    if (callback === false) return false;
+// function everyFunc(arr, callback) {
+//     if (!Array.isArray(arr)) return console.error('First argument should be array');
+//     if (typeof callback !== 'function') return console.error('Second argument should be function');
+//     if (callback === false) return false;
 
-}
+// }
 
-function callback1(el, index, arr) {
-    for (i = 0; i < arr.length; i++) {
-        if (i < 5) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-}
-everyFunc([6, 7, 8], callback1);
+// function callback1(el, index, arr) {
+//     for (i = 0; i < arr.length; i++) {
+//         if (i < 5) {
+//             return false;
+//         } else {
+//             return true;
+//         }
+//     }
+// }
+// everyFunc([6, 7, 8], callback1);
