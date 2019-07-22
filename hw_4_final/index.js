@@ -1,10 +1,10 @@
 ///////// TASK 1
 function isParent(parent, child) {
-    return child.parentElement === parent;
+    return child.parentNode === parent;
 }
 
 isParent(document.querySelector('ul'), document.querySelector('li')); //true
-isParent(document.querySelector('ul'), document.querySelector('mark')); //false
+isParent(document.querySelector('ul'), document.querySelector('mark')); //true
 
 /////////////// TASK 2
 function getLinks() {
@@ -41,8 +41,7 @@ let btn = document.getElementById('btn-msg');
 btn.addEventListener('click', function() { alert(btn.dataset.text); });
 
 ////task3
-let nodeOnClick = document.querySelector("body");
-nodeOnClick.addEventListener('click', function() {
-    let target = event.target;
-    console.log(target.tagName);
+let nodeOnClick = document.querySelector("body").addEventListener('click', function(nodeOnClick) {
+
+    document.querySelector("#tag").textContent = 'Tag: ' + nodeOnClick.target.tagName;
 });
