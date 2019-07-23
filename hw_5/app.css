@@ -1,0 +1,8 @@
+.done {
+    background-color: green
+}
+
+;
+.completed {
+    display: none !important;
+}
